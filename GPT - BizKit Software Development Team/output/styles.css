@@ -1,0 +1,90 @@
+/* styles.css */
+
+/* General Enhancements */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+a:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+button:hover {
+    background-color: #1a73e8;
+}
+
+input, textarea {
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+header, footer {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Home Page */
+main h1 {
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Prompt Input Page */
+textarea {
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result-display {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+aside {
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 12px;
+}
+
+aside h2 {
+    margin-bottom: 16px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+aside ul li:hover {
+    background-color: #f1f1f1;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #1a73e8;
+}

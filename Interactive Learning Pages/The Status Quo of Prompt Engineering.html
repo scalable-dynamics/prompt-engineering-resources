@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Status Quo of Prompt Engineering</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #383838;
+            border: 4px solid #ffffff;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .slide {
+            margin-bottom: 40px;
+        }
+        .slide-content {
+            background-color: #4a4a4a;
+            border: 2px solid #92cc41;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+        }
+        .date {
+            width: 100px;
+            font-weight: bold;
+            color: #92cc41;
+        }
+        .event {
+            flex: 1;
+        }
+        .token-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .token {
+            background-color: #92cc41;
+            color: #202020;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .latent-space {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .space {
+            width: 45%;
+            height: 200px;
+            border: 2px solid #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            text-align: center;
+        }
+        .interactive-prompt {
+            margin-top: 20px;
+        }
+        .prompt-input {
+            width: 100%;
+            height: 100px;
+            background-color: #4a4a4a;
+            color: #ffffff;
+            border: 2px solid #92cc41;
+            padding: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+        }
+        .prompt-output {
+            margin-top: 10px;
+            min-height: 100px;
+            background-color: #4a4a4a;
+            border: 2px solid #92cc41;
+            padding: 10px;
+        }
+        .nes-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Status Quo of Prompt Engineering</h1>
+
+        <div class="slide">
+            <h2>Timeline of Prompt Engineering Research</h2>
+            <div class="slide-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="date">May 2020</span>
+                        <span class="event">Language Models Are Few-Shot Learners</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Sep 2021</span>
+                        <span class="event">Finetuned Language Models Are Zero-Shot Learners</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Jan 2022</span>
+                        <span class="event">Chain-of-Thought Prompting Elicits Reasoning in Large Language Models</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Jun 2022</span>
+                        <span class="event">Emergent Abilities of Large Language Models</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="date">Jul 2024</span>
+                        <span class="event">Tree of Thoughts: Deliberate Problem Solving with Large Language Models</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Tokenization and Embeddings</h2>
+            <div class="slide-content">
+                <p>Original phrase: "The quick brown fox jumped over the lazy dog"</p>
+                <div class="token-container">
+                    <span class="token">the</span>
+                    <span class="token">quick</span>
+                    <span class="token">brown</span>
+                    <span class="token">fox</span>
+                    <span class="token">jumped</span>
+                    <span class="token">over</span>
+                    <span class="token">the</span>
+                    <span class="token">lazy</span>
+                    <span class="token">dog</span>
+                </div>
+                <p>Note: First and last tokens are especially important!</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>In-Context Learning</h2>
+            <div class="slide-content">
+                <p>High-Quality Context → Accurate & Relevant Output</p>
+                <p>Low-Quality Context → Inaccurate or Irrelevant Output</p>
+                <div class="nes-container is-rounded">
+                    <p>Quality input is crucial for optimal results!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Understanding Latent Space</h2>
+            <div class="slide-content">
+                <div class="latent-space">
+                    <div class="space">
+                        <p>Traditional 3D Space<br>(x, y, z)</p>
+                    </div>
+                    <div class="space">
+                        <p>High-Dimensional Latent Space<br>(1546 dimensions)</p>
+                    </div>
+                </div>
+                <p>Embeddings are stored and referenced in this complex high-dimensional space!</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Interactive Prompt Engineering</h2>
+            <div class="slide-content">
+                <div class="interactive-prompt">
+                    <textarea id="promptInput" class="prompt-input" placeholder="Enter your prompt here..."></textarea>
+                    <button type="button" class="nes-btn is-primary" onclick="generateOutput()">Generate Output</button>
+                    <div id="promptOutput" class="prompt-output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateOutput() {
+            const input = document.getElementById('promptInput').value;
+            const output = document.getElementById('promptOutput');
+            
+            // Simple prompt engineering simulation
+            let response = "Generated output: ";
+            
+            if (input.toLowerCase().includes("hello") || input.toLowerCase().includes("hi")) {
+                response += "Greetings! How can I assist you today?";
+            } else if (input.toLowerCase().includes("weather")) {
+                response += "I'm sorry, I don't have access to real-time weather data. However, I can explain how to craft a prompt to get weather information from a language model.";
+            } else if (input.toLowerCase().includes("prompt")) {
+                response += "Prompt engineering is the practice of designing and refining inputs to AI language models to achieve desired outputs. Some key techniques include: providing clear instructions, using examples, and specifying the desired format of the response.";
+            } else {
+                response += "I'm an AI assistant. I can help you learn about prompt engineering and demonstrate how different prompts might affect AI responses. Try asking about 'prompt engineering techniques' or 'best practices for prompts'.";
+            }
+            
+            output.innerHTML = response;
+        }
+    </script>
+</body>
+</html>

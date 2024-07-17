@@ -1,0 +1,451 @@
+{
+  "azure_ai_studio_resources": [
+    {
+      "title": "Azure AI Studio Documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/",
+      "description": "Official documentation for Azure AI Studio"
+    },
+    {
+      "title": "Getting started with Azure AI Studio",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/get-started",
+      "description": "Step-by-step guide to start using Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio Pricing",
+      "url": "https://azure.microsoft.com/en-us/pricing/details/ai-studio/",
+      "description": "Detailed pricing information for Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio FAQ",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/faq",
+      "description": "Frequently asked questions about Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio Release Notes",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/release-notes",
+      "description": "Latest updates and features in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Data Preparation Guide",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-prep",
+      "description": "Best practices for preparing data in Azure AI Studio"
+    },
+    {
+      "title": "Model Development in Azure AI Studio",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-development",
+      "description": "Guide to developing AI models in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Model Deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-deployment",
+      "description": "Steps to deploy models from Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Model Monitoring",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-monitoring",
+      "description": "How to monitor deployed models in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: AutoML Features",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/automl",
+      "description": "Overview of AutoML capabilities in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: MLOps Best Practices",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/mlops",
+      "description": "MLOps implementation in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Responsible AI Tools",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/concept-responsible-ai",
+      "description": "Using Responsible AI tools in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Integration with Azure Synapse",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/synapse-integration",
+      "description": "How to integrate Azure AI Studio with Azure Synapse"
+    },
+    {
+      "title": "Azure AI Studio: Computer Vision Tasks",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/computer-vision",
+      "description": "Implementing computer vision tasks in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: NLP Tasks",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/nlp",
+      "description": "Natural Language Processing in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Time Series Forecasting",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/time-series",
+      "description": "Time series analysis and forecasting in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Anomaly Detection",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/anomaly-detection",
+      "description": "Implementing anomaly detection in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Reinforcement Learning",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/reinforcement-learning",
+      "description": "Getting started with reinforcement learning in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Model Interpretability",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-interpretability",
+      "description": "Understanding and implementing model interpretability in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Data Drift Detection",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-drift",
+      "description": "Detecting and handling data drift in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Hyperparameter Tuning",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/hyperparameter-tuning",
+      "description": "Optimizing model performance through hyperparameter tuning"
+    },
+    {
+      "title": "Azure AI Studio: Experiment Tracking",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/experiment-tracking",
+      "description": "Tracking and managing experiments in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Model Versioning",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-versioning",
+      "description": "Best practices for model versioning in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Distributed Training",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/distributed-training",
+      "description": "Implementing distributed training in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: GPU Acceleration",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/gpu-acceleration",
+      "description": "Leveraging GPU acceleration in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Pipeline Orchestration",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/pipeline-orchestration",
+      "description": "Creating and managing ML pipelines in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Automated Feature Engineering",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/feature-engineering",
+      "description": "Automating feature engineering in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Model Explainability",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-explainability",
+      "description": "Implementing model explainability in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Fairness Assessment",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/fairness-assessment",
+      "description": "Assessing and ensuring model fairness in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Security Best Practices",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/security",
+      "description": "Implementing security measures in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Compliance and Governance",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/compliance",
+      "description": "Ensuring compliance and governance in Azure AI Studio projects"
+    },
+    {
+      "title": "Azure AI Studio: Integration with Azure DevOps",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/devops-integration",
+      "description": "Integrating Azure AI Studio with Azure DevOps"
+    },
+    {
+      "title": "Azure AI Studio: Continuous Integration and Deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/ci-cd",
+      "description": "Implementing CI/CD for ML models in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Edge Deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/edge-deployment",
+      "description": "Deploying models to edge devices from Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Transfer Learning",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/transfer-learning",
+      "description": "Implementing transfer learning in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Ensemble Methods",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/ensemble-methods",
+      "description": "Using ensemble methods in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Federated Learning",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/federated-learning",
+      "description": "Implementing federated learning in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Model Compression",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-compression",
+      "description": "Techniques for model compression in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: A/B Testing",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/ab-testing",
+      "description": "Implementing A/B testing for models in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Cost Management",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/cost-management",
+      "description": "Managing and optimizing costs in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Collaboration Features",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/collaboration",
+      "description": "Leveraging collaboration features in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Integration with Azure Databricks",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/databricks-integration",
+      "description": "Integrating Azure AI Studio with Azure Databricks"
+    },
+    {
+      "title": "Azure AI Studio: Model Registry",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-registry",
+      "description": "Using the model registry in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Data Labeling",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-labeling",
+      "description": "Data labeling techniques and best practices in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Automated Documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/automated-documentation",
+      "description": "Generating automated documentation for models and experiments"
+    },
+    {
+      "title": "Azure AI Studio: Model Serving",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-serving",
+      "description": "Best practices for serving models in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Custom Vision Integration",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/custom-vision",
+      "description": "Integrating Custom Vision projects with Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio: Cognitive Services Integration",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/cognitive-services",
+      "description": "Using Azure Cognitive Services in Azure AI Studio"
+    },
+    {
+      "title": "Azure AI Studio Community",
+      "url": "https://techcommunity.microsoft.com/t5/azure-ai-services/bd-p/AzureAIServices",
+      "description": "Join the Azure AI Studio community for discussions and support"
+    }
+  ],
+  "quick_tips": [
+    {
+      "tip": "Use Azure AI Studio's AutoML feature for rapid model prototyping.",
+      "category": "Model Development"
+    },
+    {
+      "tip": "Leverage pre-built AI models to jumpstart your project.",
+      "category": "Rapid Development"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's data labeling tools for efficient dataset preparation.",
+      "category": "Data Preparation"
+    },
+    {
+      "tip": "Implement MLOps practices using Azure AI Studio's built-in CI/CD capabilities.",
+      "category": "MLOps"
+    },
+    {
+      "tip": "Use Azure AI Studio's experiment tracking to keep your team aligned on model versions and performance.",
+      "category": "Collaboration"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's integration with Azure Synapse for big data processing.",
+      "category": "Data Processing"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's GPU-accelerated computing for faster model training.",
+      "category": "Performance Optimization"
+    },
+    {
+      "tip": "Implement automated data drift detection to ensure model relevance over time.",
+      "category": "Model Monitoring"
+    },
+    {
+      "tip": "Use Azure AI Studio's model interpretability tools to explain your model's decisions.",
+      "category": "Responsible AI"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's integration with Azure Cognitive Services for advanced AI capabilities.",
+      "category": "AI Enhancement"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's data versioning capabilities for reproducible experiments.",
+      "category": "Data Management"
+    },
+    {
+      "tip": "Implement automated model retraining pipelines to keep your models up-to-date.",
+      "category": "Model Maintenance"
+    },
+    {
+      "tip": "Use Azure AI Studio's feature store for efficient feature management across projects.",
+      "category": "Feature Engineering"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's A/B testing capabilities to compare model performance.",
+      "category": "Model Evaluation"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's integration with Azure Databricks for distributed model training.",
+      "category": "Scalability"
+    },
+    {
+      "tip": "Implement model fairness assessment using Azure AI Studio's responsible AI dashboard.",
+      "category": "Ethical AI"
+    },
+    {
+      "tip": "Use Azure AI Studio's automated ML interpretability to understand feature importance.",
+      "category": "Model Insights"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's integration with Azure DevOps for streamlined development workflows.",
+      "category": "Development Process"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's model profiling tools to optimize inference performance.",
+      "category": "Deployment Optimization"
+    },
+    {
+      "tip": "Implement multi-model inference using Azure AI Studio's model packaging capabilities.",
+      "category": "Model Deployment"
+    },
+    {
+      "tip": "Use Azure AI Studio's data asset management for centralized data governance.",
+      "category": "Data Governance"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's integration with Azure Kubernetes Service for scalable model deployment.",
+      "category": "Scalable Deployment"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's hyperparameter tuning capabilities for model optimization.",
+      "category": "Model Optimization"
+    },
+    {
+      "tip": "Implement automated model documentation using Azure AI Studio's MLOps features.",
+      "category": "Documentation"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Power BI for advanced model analytics and reporting.",
+      "category": "Reporting"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's built-in security features for data encryption and access control.",
+      "category": "Security"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's model registry for centralized model management.",
+      "category": "Model Management"
+    },
+    {
+      "tip": "Implement automated data quality checks using Azure AI Studio's data validation tools.",
+      "category": "Data Quality"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Azure Container Registry for efficient model containerization.",
+      "category": "Containerization"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's notebook experiences for interactive model development.",
+      "category": "Development Environment"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's data labeling workforce management for efficient data annotation.",
+      "category": "Data Labeling"
+    },
+    {
+      "tip": "Implement model versioning using Azure AI Studio's model lineage tracking.",
+      "category": "Version Control"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Azure Event Hubs for real-time data ingestion.",
+      "category": "Real-time Processing"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's automated feature engineering capabilities for rapid feature development.",
+      "category": "Feature Development"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's integration with Azure Data Factory for complex data preparation workflows.",
+      "category": "Data Workflow"
+    },
+    {
+      "tip": "Implement model monitoring dashboards using Azure AI Studio's built-in visualization tools.",
+      "category": "Model Monitoring"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Azure Logic Apps for complex workflow automation.",
+      "category": "Workflow Automation"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's built-in experiment comparison tools for efficient model selection.",
+      "category": "Model Selection"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's integration with Azure Data Lake for scalable data storage and analytics.",
+      "category": "Data Storage"
+    },
+    {
+      "tip": "Implement automated bias detection using Azure AI Studio's responsible AI tools.",
+      "category": "Bias Detection"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Azure Functions for serverless model deployment.",
+      "category": "Serverless Deployment"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's built-in data profiling tools for quick dataset insights.",
+      "category": "Data Analysis"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's integration with Azure IoT Hub for edge AI development.",
+      "category": "Edge AI"
+    },
+    {
+      "tip": "Implement automated model explanation generation using Azure AI Studio's interpretability features.",
+      "category": "Model Explainability"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Azure API Management for secure model API deployment.",
+      "category": "API Management"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's built-in model debugging tools for efficient troubleshooting.",
+      "category": "Debugging"
+    },
+    {
+      "tip": "Utilize Azure AI Studio's integration with Azure Batch AI for large-scale model training.",
+      "category": "Large-scale Training"
+    },
+    {
+      "tip": "Implement automated model governance using Azure AI Studio's MLOps capabilities.",
+      "category": "Model Governance"
+    },
+    {
+      "tip": "Use Azure AI Studio's integration with Azure Stream Analytics for real-time model inference.",
+      "category": "Real-time Inference"
+    },
+    {
+      "tip": "Leverage Azure AI Studio's built-in model compression tools for efficient edge deployment.",
+      "category": "Edge Deployment"
+    }
+  ]
+}

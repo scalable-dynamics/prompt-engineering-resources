@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure AI and Copilot Studio Resource Hub</title>
+    <style>
+        :root {
+            --bg-color: #ECE9D8;
+            --text-color: #000000;
+            --window-bg: #FFFFFF;
+            --window-border: #0054E3;
+            --title-bar-bg: linear-gradient(to bottom, #0058E6, #3A93FF);
+            --title-text: white;
+            --button-bg: linear-gradient(to bottom, #F0F0F0, #E1E1E1);
+            --button-hover: linear-gradient(to bottom, #E1E1E1, #D0D0D0);
+            --tab-bg: #F0F0F0;
+            --tab-border: #7A7A7A;
+            --active-tab-bg: #FFFFFF;
+            --input-border: #7A7A7A;
+            --quick-tips-bg: #FFFFC1;
+            --quick-tips-border: #E5E5A5;
+        }
+
+        .dark-mode {
+            --bg-color: #1E1E1E;
+            --text-color: #FFFFFF;
+            --window-bg: #2D2D2D;
+            --window-border: #0078D7;
+            --title-bar-bg: linear-gradient(to bottom, #0078D7, #0063B1);
+            --title-text: white;
+            --button-bg: linear-gradient(to bottom, #3C3C3C, #323232);
+            --button-hover: linear-gradient(to bottom, #323232, #282828);
+            --tab-bg: #3C3C3C;
+            --tab-border: #555555;
+            --active-tab-bg: #2D2D2D;
+            --input-border: #555555;
+            --quick-tips-bg: #2D2D2D;
+            --quick-tips-border: #555555;
+        }
+
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .window {
+            background-color: var(--window-bg);
+            border: 1px solid var(--window-border);
+            border-radius: 8px;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .title-bar {
+            background: var(--title-bar-bg);
+            color: var(--title-text);
+            padding: 8px 12px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title-bar-controls {
+            display: flex;
+        }
+        .title-bar-control {
+            width: 20px;
+            height: 20px;
+            background-color: var(--button-bg);
+            border: 1px solid var(--input-border);
+            margin-left: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .content {
+            padding: 15px;
+        }
+        .button {
+            background: var(--button-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 3px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        .button:hover {
+            background: var(--button-hover);
+        }
+        .tab-container {
+            display: flex;
+            background-color: var(--tab-bg);
+            border-bottom: 1px solid var(--tab-border);
+        }
+        .tab {
+            padding: 8px 15px;
+            cursor: pointer;
+            border-right: 1px solid var(--tab-border);
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        .tab.active {
+            background-color: var(--active-tab-bg);
+            border-bottom: 1px solid var(--active-tab-bg);
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 15px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        #search-box, .search-box {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--input-border);
+            border-radius: 3px;
+            background-color: var(--window-bg);
+            color: var(--text-color);
+        }
+        .resource-list {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid var(--input-border);
+            padding: 10px;
+            background-color: var(--window-bg);
+        }
+        .resource-item {
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .resource-item:hover {
+            background-color: var(--tab-bg);
+        }
+        .quick-tips {
+            font-style: italic;
+            padding: 10px;
+            background-color: var(--quick-tips-bg);
+            border: 1px solid var(--quick-tips-border);
+            border-radius: 3px;
+            color: var(--text-color);
+        }
+        select, textarea {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 10px;
+            border: 1px solid var(--input-border);
+            border-radius: 3px;
+            background-color: var(--window-bg);
+            color: var(--text-color);
+        }
+        #rag-demo-container {
+            background-color: var(--tab-bg);
+            border: 1px solid var(--input-border);
+            padding: 15px;
+            margin-top: 15px;
+        }
+        #rag-output {
+            background-color: var(--window-bg);
+            border: 1px solid var(--input-border);
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 100px;
+        }
+        .minimize {
+            display: none;
+        }
+        #dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="dark-mode-toggle" class="button">Toggle Dark Mode</button> -->
+    <div class="window" id="main-window">
+        <div class="title-bar">
+            <span>Azure AI and Copilot Studio Resource Hub</span>
+            <div class="title-bar-controls">
+                <div class="title-bar-control" onclick="minimizeWindow('main-window')">_</div>
+                <div class="title-bar-control" onclick="toggleMaximize('main-window')">□</div>
+                <div class="title-bar-control" onclick="closeWindow('main-window')">X</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tab-container">
+                <div class="tab active" data-tab="azure-ai">Azure AI Studio</div>
+                <div class="tab" data-tab="copilot">Copilot Studio</div>
+                <div class="tab" data-tab="prompt-engineering">Prompt Engineering</div>
+                <div class="tab" data-tab="rag">RAG</div>
+                <div class="tab" data-tab="troubleshooting">Troubleshooting</div>
+            </div>
+            <div id="azure-ai" class="tab-content active">
+                <h2>Azure AI Studio Resources</h2>
+                <input type="text" id="azure-search-box" class="search-box" placeholder="Search Azure AI resources...">
+                <div id="azure-resource-list" class="resource-list"></div>
+                <h3>Quick Tips</h3>
+                <div id="azure-quick-tips" class="quick-tips"></div>
+            </div>
+            <div id="copilot" class="tab-content">
+                <h2>Copilot Studio Resources</h2>
+                <input type="text" id="copilot-search-box" class="search-box" placeholder="Search Copilot Studio resources...">
+                <div id="copilot-resource-list" class="resource-list"></div>
+                <h3>Quick Tips</h3>
+                <div id="copilot-quick-tips" class="quick-tips"></div>
+            </div>
+            <div id="prompt-engineering" class="tab-content">
+                <h2>Prompt Engineering Techniques</h2>
+                <ul id="prompt-techniques-list"></ul>
+                <button class="button" id="show-examples">Show Prompting Examples</button>
+                <div id="examples-container" style="display:none;">
+                    <h3>Prompting Examples</h3>
+                    <select id="technique-select">
+                        <option value="zero-shot">Zero-Shot Prompting</option>
+                        <option value="few-shot">Few-Shot Prompting</option>
+                        <option value="cot">Chain-of-Thought Prompting</option>
+                        <option value="cos">Chain-of-Symbol Prompting</option>
+                        <option value="self-consistency">Self-Consistency</option>
+                    </select>
+                    <div id="example-output"></div>
+                </div>
+            </div>
+            <div id="rag" class="tab-content">
+                <h2>Retrieval Augmented Generation (RAG)</h2>
+                <p>RAG is a technique that combines retrieval-based and generative approaches in AI models. Key components:</p>
+                <ul>
+                    <li>Keyword Search</li>
+                    <li>Vector Search</li>
+                    <li>Hybrid Search</li>
+                    <li>Search Re-ranking</li>
+                </ul>
+                <button class="button" id="show-rag-demo">Try RAG Demo</button>
+                <div id="rag-demo-container" style="display:none;">
+                    <h3>RAG Demo</h3>
+                    <textarea id="rag-query" rows="3" placeholder="Enter your query here..."></textarea>
+                    <button class="button" id="run-rag-demo">Run RAG Demo</button>
+                    <div id="rag-output"></div>
+                </div>
+            </div>
+            <div id="troubleshooting" class="tab-content">
+                <h2>Common Issues and Solutions</h2>
+                <ul id="troubleshooting-list"></ul>
+                <button class="button" id="show-kb">Show Knowledge Base</button>
+                <div id="kb-container" style="display:none;">
+                    <h3>Knowledge Base</h3>
+                    <select id="kb-select">
+                        <option value="azure">Azure AI Studio</option>
+                        <option value="copilot">Copilot Studio</option>
+                    </select>
+                    <div id="kb-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="window" id="quick-tips-window">
+        <div class="title-bar">
+            <span>Quick Tips</span>
+            <div class="title-bar-controls">
+                <div class="title-bar-control" onclick="minimizeWindow('quick-tips-window')">_</div>
+                <div class="title-bar-control" onclick="toggleMaximize('quick-tips-window')">□</div>
+                <div class="title-bar-control" onclick="closeWindow('quick-tips-window')">X</div>
+            </div>
+        </div>
+        <div class="content">
+            <div id="quick-tips"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Fetch JSON data
+        async function fetchJSON(url) {
+            const response = await fetch(url);
+            return response.json();
+        }
+
+        // Populate resource list
+        function populateResourceList(resources, listId, searchBoxId) {
+            const resourceList = document.getElementById(listId);
+            const searchBox = document.getElementById(searchBoxId);
+
+            function updateList(searchTerm = "") {
+                resourceList.innerHTML = "";
+                resources.filter(resource => 
+                    resource.title.toLowerCase().includes(searchTerm.toLowerCase())
+                ).forEach(resource => {
+                    const div = document.createElement("div");
+                    div.className = "resource-item";
+                    div.textContent = resource.title;
+                    div.onclick = () => window.open(resource.url, "_blank");
+                    resourceList.appendChild(div);
+                });
+            }
+
+            updateList();
+            searchBox.addEventListener("input", (e) => updateList(e.target.value));
+        }
+
+        // Populate quick tips
+        function populateQuickTips(tips, containerId) {
+            const container = document.getElementById(containerId);
+            let currentTipIndex = 0;
+            
+            function updateTip() {
+                container.textContent = tips[currentTipIndex].tip;
+                currentTipIndex = (currentTipIndex + 1) % tips.length;
+            }
+
+            updateTip();
+            setInterval(updateTip, 10000);
+        }
+
+        // Window management functions
+        function minimizeWindow(windowId) {
+            const window = document.getElementById(windowId);
+            window.classList.add('minimize');
+        }
+
+        function toggleMaximize(windowId) {
+            const window = document.getElementById(windowId);
+            window.classList.toggle('maximize');
+        }
+
+        function closeWindow(windowId) {
+            const window = document.getElementById(windowId);
+            window.style.display = 'none';
+        }
+
+        // Initialize page
+        document.addEventListener("DOMContentLoaded", async () => {
+            // Fetch data
+            const azureData = await fetchJSON('azure-ai-studio-resources.json');
+            const copilotData = await fetchJSON('copilot-studio-resources.json');
+
+            // Populate Azure AI Studio resources and tips
+            populateResourceList(azureData.azure_ai_studio_resources, 'azure-resource-list', 'azure-search-box');
+            populateQuickTips(azureData.quick_tips, 'azure-quick-tips');
+
+            // Populate Copilot Studio resources and tips
+            populateResourceList(copilotData.copilot_studio_resources, 'copilot-resource-list', 'copilot-search-box');
+            populateQuickTips(copilotData.quick_tips, 'copilot-quick-tips');
+
+            // Populate prompt engineering techniques
+            const techniques = [
+                "Zero-Shot Prompting", "Few-Shot Prompting", "Chain-of-Thought (CoT) Prompting",
+                "Chain-of-Symbol (CoS) Prompting", "Self-Consistency", "Generated Knowledge Prompting",
+                "Prompt Chaining", "Tree of Thoughts (ToT)", "Maieutic Prompting", "Least-to-Most Prompting",
+
+            ];
+            const techniquesList = document.getElementById('prompt-techniques-list');
+            techniques.forEach(technique => {
+                const li = document.createElement('li');
+                li.textContent = technique;
+                techniquesList.appendChild(li);
+            });
+
+            // Populate troubleshooting list
+            const troubleshootingIssues = [
+                "Unable to access Azure AI Studio",
+                "Slow performance in Copilot Studio",
+                "Model training errors in Azure AI Studio",
+                "Bot responses inconsistent in Copilot Studio",
+                "Data preparation issues in Azure AI Studio"
+            ];
+            const troubleshootingList = document.getElementById('troubleshooting-list');
+            troubleshootingIssues.forEach(issue => {
+                const li = document.createElement('li');
+                li.textContent = issue;
+                troubleshootingList.appendChild(li);
+            });
+
+            // Tab switching
+            document.querySelectorAll(".tab").forEach(tab => {
+                tab.addEventListener("click", () => {
+                    document.querySelectorAll(".tab, .tab-content").forEach(el => el.classList.remove("active"));
+                    tab.classList.add("active");
+                    document.getElementById(tab.dataset.tab).classList.add("active");
+                });
+            });
+
+            // Prompting Examples
+            document.getElementById("show-examples").addEventListener("click", () => {
+                document.getElementById("examples-container").style.display = "block";
+            });
+
+            document.getElementById("technique-select").addEventListener("change", (e) => {
+                const examples = {
+                    "zero-shot": "Translate the following English text to French: 'Hello, how are you?'",
+                    "few-shot": "English: Hello\nFrench: Bonjour\n\nEnglish: Goodbye\nFrench: Au revoir\n\nEnglish: How are you?\nFrench:",
+                    "cot": "Q: If John has 5 apples and gives 2 to his friend, how many apples does he have left?\nA: Let's think through this step-by-step:\n1) John starts with 5 apples\n2) He gives away 2 apples\n3) To find out how many he has left, we subtract: 5 - 2 = 3\nTherefore, John has 3 apples left.",
+                    "cos": "Problem: Calculate 13 x 24\nLet's solve this step by step:\n1) 13 x 24\n2) (10 + 3) x 24\n3) (10 x 24) + (3 x 24)\n4) 240 + 72\n5) 312\nTherefore, 13 x 24 = 312",
+                    "self-consistency": "Q: What's the capital of France?\nA1: The capital of France is Paris.\nA2: Paris is the capital city of France.\nA3: France's capital is Paris.\n\nConsistent answer: Paris is the capital of France."
+                };
+                document.getElementById("example-output").textContent = examples[e.target.value];
+            });
+
+            // Initialize example output
+            document.getElementById("example-output").textContent = "Translate the following English text to French: 'Hello, how are you?'";
+
+            // RAG Demo
+            document.getElementById("show-rag-demo").addEventListener("click", () => {
+                document.getElementById("rag-demo-container").style.display = "block";
+            });
+
+            document.getElementById("run-rag-demo").addEventListener("click", () => {
+                const query = document.getElementById("rag-query").value;
+                document.getElementById("rag-output").textContent = `Processing RAG query: ${query}`;
+                // Here you would implement the actual RAG functionality
+            });
+
+            // Knowledge Base
+            document.getElementById("show-kb").addEventListener("click", () => {
+                document.getElementById("kb-container").style.display = "block";
+            });
+
+            document.getElementById("kb-select").addEventListener("change", (e) => {
+                const kbContent = {
+                    azure: "Azure AI Studio troubleshooting content: <br><br>1. Check your network connection<br>2. Verify your Azure subscription is active<br>3. Clear browser cache and cookies<br>4. Try a different browser<br>5. Contact Azure support if issues persist",
+                    copilot: "Copilot Studio troubleshooting content: <br><br>1. Ensure you have the latest version installed<br>2. Check for any ongoing service outages<br>3. Verify your authentication credentials<br>4. Restart the Copilot Studio application<br>5. Review the official documentation for known issues"
+                };
+                document.getElementById("kb-content").innerHTML = kbContent[e.target.value];
+            });
+
+            // Initialize knowledge base content
+            document.getElementById("kb-content").innerHTML = "Azure AI Studio troubleshooting content: <br><br>1. Check your network connection<br>2. Verify your Azure subscription is active<br>3. Clear browser cache and cookies<br>4. Try a different browser<br>5. Contact Azure support if issues persist";
+        });
+
+        // Function to simulate RAG processing
+        function simulateRAG(query) {
+            const responses = [
+                "Based on the retrieved information, the answer to your query is...",
+                "The most relevant information for your question suggests that...",
+                "After analyzing the available data, it appears that...",
+                "The retrieved documents indicate that...",
+                "Considering the context of your query, the most appropriate response is..."
+            ];
+            return responses[Math.floor(Math.random() * responses.length)] + " [Simulated RAG response for: '" + query + "']";
+        }
+
+        // Enhance RAG Demo functionality
+        document.getElementById("run-rag-demo").addEventListener("click", () => {
+            const query = document.getElementById("rag-query").value;
+            const outputElement = document.getElementById("rag-output");
+            outputElement.textContent = "Processing RAG query...";
+            
+            // Simulate asynchronous processing
+            setTimeout(() => {
+                const result = simulateRAG(query);
+                outputElement.textContent = result;
+            }, 1500);
+        });
+
+        // Function to create a draggable window
+        function makeDraggable(windowId) {
+            const window = document.getElementById(windowId);
+            const titleBar = window.querySelector('.title-bar');
+            let isDragging = false;
+            let currentX;
+            let currentY;
+            let initialX;
+            let initialY;
+            let xOffset = 0;
+            let yOffset = 0;
+
+            titleBar.addEventListener("mousedown", dragStart);
+            document.addEventListener("mousemove", drag);
+            document.addEventListener("mouseup", dragEnd);
+
+            function dragStart(e) {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+                isDragging = true;
+            }
+
+            function drag(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    xOffset = currentX;
+                    yOffset = currentY;
+                    setTranslate(currentX, currentY, window);
+                }
+            }
+
+            function dragEnd(e) {
+                initialX = currentX;
+                initialY = currentY;
+                isDragging = false;
+            }
+
+            function setTranslate(xPos, yPos, el) {
+                el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+            }
+        }
+
+        // Make windows draggable
+        makeDraggable("main-window");
+        makeDraggable("quick-tips-window");
+
+        // Function to toggle window size
+        function toggleMaximize(windowId) {
+            const window = document.getElementById(windowId);
+            window.classList.toggle('maximize');
+            if (window.classList.contains('maximize')) {
+                window.style.width = '100%';
+                window.style.height = '100%';
+                window.style.top = '0';
+                window.style.left = '0';
+            } else {
+                window.style.width = '';
+                window.style.height = '';
+                window.style.top = '';
+                window.style.left = '';
+            }
+        }
+
+        // Dark mode toggle
+        // document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('dark-mode');
+        });
+        // });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Prompt Engineering Calculator 2.0</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .nes-container {
+            margin-bottom: 20px;
+        }
+        #chat-log {
+            height: 200px;
+            overflow-y: scroll;
+            background-color: #000;
+            padding: 10px;
+            border: 2px solid #fff;
+        }
+        #prompt-input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        #result {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .pixel-art {
+            image-rendering: pixelated;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+        #progress-bar {
+            width: 0;
+            height: 20px;
+            background-color: #92cc41;
+            transition: width 0.5s ease-in-out;
+        }
+        #history-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .score-breakdown {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        .dark-theme {
+            background-color: #202020;
+            color: #ffffff;
+        }
+        .light-theme {
+            background-color: #ffffff;
+            color: #202020;
+        }
+        .dark-theme p.title {
+            color: black;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div class="container">
+        <h1 class="nes-text is-primary">Advanced Prompt Engineering Calculator 2.0</h1>
+        
+        <div class="nes-container with-title">
+            <p class="title">AI Assistant</p>
+            <div class="pixel-art">
+                <div style="width: 100px; height: 100px; background: linear-gradient(45deg, #ff00ff, #00ffff);"></div>
+            </div>
+        </div>
+
+        <div class="nes-container with-title">
+            <p class="title">Chat Log</p>
+            <div id="chat-log"></div>
+        </div>
+
+        <div class="nes-container with-title">
+            <p class="title">Prompt Input</p>
+            <textarea id="prompt-input" class="nes-textarea" rows="3" placeholder="Enter your prompt here"></textarea>
+            <button id="calculate-btn" class="nes-btn is-primary">Calculate</button>
+            <button id="clear-btn" class="nes-btn is-error">Clear</button>
+        </div>
+
+        <div class="nes-container with-title">
+            <p class="title">Analysis Progress</p>
+            <div id="progress-bar"></div>
+        </div>
+
+        <div class="nes-container with-title">
+            <p class="title">Result</p>
+            <p id="result"></p>
+            <div id="score-breakdown" class="score-breakdown"></div>
+        </div>
+
+        <div class="nes-container with-title">
+            <p class="title">Prompt History</p>
+            <ul id="history-list" class="nes-list is-disc"></ul>
+        </div>
+    </div>
+
+    <div class="theme-toggle">
+        <label>
+            <input type="checkbox" class="nes-checkbox" id="theme-switch" checked>
+            <span>Light Theme</span>
+        </label>
+    </div>
+
+    <script>
+        const chatLog = document.getElementById('chat-log');
+        const promptInput = document.getElementById('prompt-input');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const result = document.getElementById('result');
+        const progressBar = document.getElementById('progress-bar');
+        const historyList = document.getElementById('history-list');
+        const scoreBreakdown = document.getElementById('score-breakdown');
+        const themeSwitch = document.getElementById('theme-switch');
+
+        const aiResponses = [
+            "Analyzing prompt complexity...",
+            "Calculating token usage...",
+            "Evaluating semantic coherence...",
+            "Assessing creativity factor...",
+            "Measuring prompt effectiveness..."
+        ];
+
+        function addChatMessage(sender, message) {
+            const messageElement = document.createElement('p');
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatLog.appendChild(messageElement);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function calculatePromptScore(prompt) {
+            let score = 0;
+            let breakdown = {};
+
+            breakdown.length = Math.min(20, prompt.length * 0.1);
+            score += breakdown.length;
+
+            breakdown.questions = Math.min(15, (prompt.match(/\?/g) || []).length * 5);
+            score += breakdown.questions;
+
+            breakdown.interrogatives = Math.min(15, (prompt.match(/\b(who|what|when|where|why|how)\b/gi) || []).length * 3);
+            score += breakdown.interrogatives;
+
+            breakdown.wordCount = Math.min(10, prompt.split(' ').length);
+            score += breakdown.wordCount;
+
+            breakdown.keyPhrases = Math.min(10, (prompt.match(/\b(please|specifically|detailed|comprehensive)\b/gi) || []).length * 2);
+            score += breakdown.keyPhrases;
+
+            breakdown.complexVerbs = Math.min(20, (prompt.match(/\b(compare|contrast|analyze|synthesize|evaluate|explain|predict|solve)\b/gi) || []).length * 4);
+            score += breakdown.complexVerbs;
+
+            breakdown.contextuality = Math.min(10, (prompt.match(/\b(given|assuming|in the context of|considering)\b/gi) || []).length * 2);
+            score += breakdown.contextuality;
+
+            return {
+                score: Math.min(100, Math.round(score)),
+                breakdown: breakdown
+            };
+        }
+
+        function updateProgressBar(progress) {
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function addToHistory(prompt, score) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `"${prompt.substring(0, 30)}..." - Score: ${score}`;
+            historyList.prepend(listItem);
+            if (historyList.children.length > 5) {
+                historyList.removeChild(historyList.lastChild);
+            }
+        }
+
+        function displayScoreBreakdown(breakdown) {
+            scoreBreakdown.innerHTML = '<h3>Score Breakdown:</h3>';
+            for (const [key, value] of Object.entries(breakdown)) {
+                scoreBreakdown.innerHTML += `<p>${key}: ${value}</p>`;
+            }
+        }
+
+        calculateBtn.addEventListener('click', () => {
+            const prompt = promptInput.value.trim();
+            if (prompt) {
+                addChatMessage('User', prompt);
+                updateProgressBar(0);
+
+                aiResponses.forEach((response, index) => {
+                    setTimeout(() => {
+                        addChatMessage('AI', response);
+                        updateProgressBar((index + 1) * 20);
+                    }, index * 1000);
+                });
+
+                setTimeout(() => {
+                    const { score, breakdown } = calculatePromptScore(prompt);
+                    result.innerHTML = `Prompt Engineering Score: ${score}/100<br>
+                        <span class="nes-text ${score < 50 ? 'is-error' : score < 80 ? 'is-warning' : 'is-success'}">
+                        ${score < 50 ? 'Needs Improvement' : score < 80 ? 'Good' : 'Excellent'}
+                        </span>`;
+                    addChatMessage('AI', `Final Prompt Engineering Score: ${score}/100`);
+                    addToHistory(prompt, score);
+                    displayScoreBreakdown(breakdown);
+                }, aiResponses.length * 1000);
+            }
+        });
+
+        clearBtn.addEventListener('click', () => {
+            promptInput.value = '';
+            result.textContent = '';
+            scoreBreakdown.innerHTML = '';
+            updateProgressBar(0);
+        });
+
+        promptInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                calculateBtn.click();
+            }
+        });
+
+        themeSwitch.addEventListener('change', () => {
+            document.body.classList.toggle('light-theme');
+            document.body.classList.toggle('dark-theme');
+        });
+
+        // Load prompt history from local storage
+        const savedHistory = JSON.parse(localStorage.getItem('promptHistory')) || [];
+        savedHistory.forEach(item => addToHistory(item.prompt, item.score));
+
+        // Save prompt history to local storage
+        window.addEventListener('beforeunload', () => {
+            const historyItems = Array.from(historyList.children).map(li => {
+                const [prompt, score] = li.textContent.split(' - Score: ');
+                return { prompt: prompt.replace('"', '').replace('...', ''), score: parseInt(score) };
+            });
+            localStorage.setItem('promptHistory', JSON.stringify(historyItems));
+        });
+    </script>
+</body>
+</html>

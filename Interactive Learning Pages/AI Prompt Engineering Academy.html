@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Engineering Academy</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            background-color: #383838;
+            border: 4px solid #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .nes-btn {
+            margin: 10px 0;
+        }
+        #summary {
+            height: 200px;
+            overflow-y: auto;
+            background-color: #282828;
+            border: 2px solid #ffffff;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        #prompt-generator {
+            margin-top: 20px;
+        }
+        #generated-prompt {
+            background-color: #282828;
+            border: 2px solid #ffffff;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Prompt Engineering Academy</h1>
+        
+        <div class="section">
+            <h2>Course Overview</h2>
+            <p>Welcome to the AI Prompt Engineering Academy! Master the art of crafting effective prompts for language models like GPT-3, GPT-4, and Claude.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Key Concepts</h2>
+            <button type="button" class="nes-btn" onclick="showConcept('foundational')">Foundational vs. Fine-Tuned Models</button>
+            <button type="button" class="nes-btn" onclick="showConcept('importance')">Importance of Prompt Engineering</button>
+            <button type="button" class="nes-btn" onclick="showConcept('system')">System Prompting with XML Tags</button>
+            <button type="button" class="nes-btn" onclick="showConcept('context')">Managing Conversation Context</button>
+            <div id="summary" class="nes-container is-dark"></div>
+        </div>
+        
+        <div class="section">
+            <h2>Prompt Generator</h2>
+            <div id="prompt-generator">
+                <label for="task">Select a task:</label>
+                <select id="task" class="nes-select">
+                    <option value="financial">Financial Report</option>
+                    <option value="legal">Legal Analysis</option>
+                    <option value="email">Donor Email</option>
+                </select>
+                <button type="button" class="nes-btn is-primary" onclick="generatePrompt()">Generate Prompt</button>
+                <div id="generated-prompt"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const concepts = {
+            foundational: "Foundational Models are versatile but not specialized. Fine-tuned models like InstructGPT, ChatGPT, and GPT-4 are optimized for specific tasks and contexts.",
+            importance: "Prompt engineering improves model performance through in-context learning, managing token limits, and providing task-specific guidance.",
+            system: "Using XML tags like <thinking> and <answer> helps structure prompts and organize the model's reasoning and output.",
+            context: "Manage conversation context by avoiding overload, using summaries, and starting new conversations with essential information."
+        };
+
+        function showConcept(concept) {
+            document.getElementById('summary').textContent = concepts[concept];
+        }
+
+        function generatePrompt() {
+            const task = document.getElementById('task').value;
+            let prompt = "";
+
+            switch(task) {
+                case 'financial':
+                    prompt = "<system>You are a financial analyst assistant. Provide a detailed financial report based on the given data.</system>\n\n<data>[Insert financial data here]</data>\n\n<thinking>Analyze the data, considering key financial metrics and trends.</thinking>\n\n<answer>Provide a comprehensive financial report, including revenue analysis, expense breakdown, and future projections.</answer>";
+                    break;
+                case 'legal':
+                    prompt = "<system>You are a legal assistant specializing in contract analysis. Review the provided contract and highlight key points.</system>\n\n<contract>[Insert contract text here]</contract>\n\n<thinking>Analyze the contract terms, identifying potential risks and important clauses.</thinking>\n\n<answer>Provide a detailed analysis of the contract, including key terms, potential issues, and recommendations.</answer>";
+                    break;
+                case 'email':
+                    prompt = "<system>You are a fundraising assistant tasked with drafting a compelling donor email.</system>\n\n<context>Recent charity event raised $50,000 for local education initiatives.</context>\n\n<thinking>Consider the donor's past contributions and the impact of their support.</thinking>\n\n<answer>Draft a personalized email thanking the donor for their support, highlighting the impact of their contribution, and suggesting future involvement opportunities.</answer>";
+                    break;
+            }
+
+            document.getElementById('generated-prompt').textContent = prompt;
+        }
+    </script>
+</body>
+</html>

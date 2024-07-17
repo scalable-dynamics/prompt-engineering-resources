@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Model Context Management & Prompt Engineering</title>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #202020;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #383838;
+            border: 4px solid #ffffff;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .content {
+            background-color: #4a4a4a;
+            border: 2px solid #92cc41;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .model-comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .model {
+            width: 30%;
+            text-align: center;
+            padding: 10px;
+            background-color: #4a4a4a;
+            border: 2px solid #92cc41;
+        }
+        .prompt-example {
+            background-color: #4a4a4a;
+            border: 2px solid #92cc41;
+            padding: 10px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .interactive-demo {
+            margin-top: 20px;
+        }
+        .demo-input {
+            width: 100%;
+            height: 100px;
+            background-color: #4a4a4a;
+            color: #ffffff;
+            border: 2px solid #92cc41;
+            padding: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+        }
+        .demo-output {
+            margin-top: 10px;
+            min-height: 100px;
+            background-color: #4a4a4a;
+            border: 2px solid #92cc41;
+            padding: 10px;
+        }
+        .nes-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Language Model Context Management & Prompt Engineering</h1>
+
+        <div class="section">
+            <h2>Model Types</h2>
+            <div class="content">
+                <div class="model-comparison">
+                    <div class="model">
+                        <h3>Foundational</h3>
+                        <p>GPT-4</p>
+                        <p>Versatile</p>
+                    </div>
+                    <div class="model">
+                        <h3>InstructGPT</h3>
+                        <p>Task-specific</p>
+                        <p>Instruction-following</p>
+                    </div>
+                    <div class="model">
+                        <h3>ChatGPT</h3>
+                        <p>Conversational</p>
+                        <p>Context-aware</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Prompt Engineering Techniques</h2>
+            <div class="content">
+                <ul>
+                    <li>In-Context Learning</li>
+                    <li>Managing Token Limits</li>
+                    <li>Sequential Prompting</li>
+                    <li>Task-Specific Guidance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>XML Tags in Prompts</h2>
+            <div class="content">
+                <p>Structure prompts with tags:</p>
+                <div class="prompt-example">
+&lt;thinking&gt;Analyze data...&lt;/thinking&gt;
+&lt;answer&gt;Results here...&lt;/answer&gt;</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Context Management</h2>
+            <div class="content">
+                <ul>
+                    <li>Avoid Overloaded Context</li>
+                    <li>Summarize for Continuity</li>
+                    <li>Use Descriptive Adjectives</li>
+                    <li>Start with Context Summary</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Interactive Demo: Context Management</h2>
+            <div class="content">
+                <div class="interactive-demo">
+                    <textarea id="contextInput" class="demo-input" placeholder="Enter your context here..."></textarea>
+                    <button type="button" class="nes-btn is-primary" onclick="manageContext()">Manage Context</button>
+                    <div id="contextOutput" class="demo-output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function manageContext() {
+            const input = document.getElementById('contextInput').value;
+            const output = document.getElementById('contextOutput');
+            
+            let response = "Managed context: ";
+            
+            if (input.length > 100) {
+                response += "Your context is quite long. Here's a summary:\n\n";
+                response += input.substring(0, 50) + "... [summarized] ..." + input.substring(input.length - 50);
+            } else if (input.toLowerCase().includes("summarize")) {
+                response += "Here's a concise summary of your context:\n\n";
+                response += input.split(' ').slice(0, 5).join(' ') + "... [key points] ..." + input.split(' ').slice(-5).join(' ');
+            } else {
+                response += "Your context is manageable. Here it is with XML tags:\n\n";
+                response += "<context>" + input + "</context>";
+            }
+            
+            output.innerHTML = response;
+        }
+    </script>
+</body>
+</html>
