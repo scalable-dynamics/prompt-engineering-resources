@@ -7,7 +7,7 @@
     },
     {
       "title": "Getting started with Azure AI Studio",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/get-started",
+      "url": "https://techcommunity.microsoft.com/t5/educator-developer-blog/getting-started-with-azure-ai-studio/ba-p/4095602",
       "description": "Step-by-step guide to start using Azure AI Studio"
     },
     {
@@ -22,17 +22,17 @@
     },
     {
       "title": "Azure AI Studio Release Notes",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/release-notes",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/whats-new",
       "description": "Latest updates and features in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Data Preparation Guide",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-prep",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-add",
       "description": "Best practices for preparing data in Azure AI Studio"
     },
     {
       "title": "Model Development in Azure AI Studio",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-development",
+      "url": "https://techcommunity.microsoft.com/t5/educator-developer-blog/getting-started-with-azure-ai-studio/ba-p/4095602",
       "description": "Guide to developing AI models in Azure AI Studio"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "title": "Azure AI Studio: AutoML Features",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/automl",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-use-automated-ml-for-ml-models?view=azureml-api-2",
       "description": "Overview of AutoML capabilities in Azure AI Studio"
     },
     {
@@ -67,42 +67,42 @@
     },
     {
       "title": "Azure AI Studio: Computer Vision Tasks",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/computer-vision",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-vision-studio",
       "description": "Implementing computer vision tasks in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: NLP Tasks",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/nlp",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/natural-language-processing",
       "description": "Natural Language Processing in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Time Series Forecasting",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/time-series",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-auto-train-forecast?view=azureml-api-2",
       "description": "Time series analysis and forecasting in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Anomaly Detection",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/anomaly-detection",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/anomaly-detector/overview",
       "description": "Implementing anomaly detection in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Reinforcement Learning",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/reinforcement-learning",
+      "url": "https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/introducing-reinforcement-learning-on-azure-machine-learning/ba-p/1403028",
       "description": "Getting started with reinforcement learning in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Model Interpretability",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-interpretability",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-machine-learning-interpretability?view=azureml-api-2",
       "description": "Understanding and implementing model interpretability in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Data Drift Detection",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-drift",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-monitor-datasets?view=azureml-api-1",
       "description": "Detecting and handling data drift in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio: Hyperparameter Tuning",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/hyperparameter-tuning",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2",
       "description": "Optimizing model performance through hyperparameter tuning"
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "title": "Azure AI Studio: Distributed Training",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/distributed-training",
+      "url": "https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-ai-studio/",
       "description": "Implementing distributed training in Azure AI Studio"
     },
     {
@@ -132,7 +132,7 @@
     },
     {
       "title": "Azure AI Studio: Automated Feature Engineering",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/feature-engineering",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features?view=azureml-api-1",
       "description": "Automating feature engineering in Azure AI Studio"
     },
     {
@@ -152,7 +152,7 @@
     },
     {
       "title": "Azure AI Studio: Compliance and Governance",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/compliance",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio",
       "description": "Ensuring compliance and governance in Azure AI Studio projects"
     },
     {
@@ -167,7 +167,7 @@
     },
     {
       "title": "Azure AI Studio: Edge Deployment",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/edge-deployment",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/idea/deploy-ai-ml-azure-stack-edge",
       "description": "Deploying models to edge devices from Azure AI Studio"
     },
     {
@@ -187,7 +187,7 @@
     },
     {
       "title": "Azure AI Studio: Model Compression",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-compression",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog-overview",
       "description": "Techniques for model compression in Azure AI Studio"
     },
     {
@@ -207,7 +207,7 @@
     },
     {
       "title": "Azure AI Studio: Integration with Azure Databricks",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/databricks-integration",
+      "url": "https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/elevating-ai-with-databricks-on-azure-introducing-the-latest/ba-p/4097909",
       "description": "Integrating Azure AI Studio with Azure Databricks"
     },
     {
@@ -227,7 +227,7 @@
     },
     {
       "title": "Azure AI Studio: Model Serving",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-serving",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-catalog-overview",
       "description": "Best practices for serving models in Azure AI Studio"
     },
     {
@@ -237,12 +237,12 @@
     },
     {
       "title": "Azure AI Studio: Cognitive Services Integration",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-studio/how-to/cognitive-services",
+      "url": "https://azure.microsoft.com/en-us/products/ai-services/",
       "description": "Using Azure Cognitive Services in Azure AI Studio"
     },
     {
       "title": "Azure AI Studio Community",
-      "url": "https://techcommunity.microsoft.com/t5/azure-ai-services/bd-p/AzureAIServices",
+      "url": "https://techcommunity.microsoft.com/t5/community-events-list/season-of-ai-getting-started-with-azure-ai-studio/m-p/4165427",
       "description": "Join the Azure AI Studio community for discussions and support"
     }
   ],

@@ -8,7 +8,7 @@
     },
     {
       "title": "Getting Started with Copilot Studio",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/get-started",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started",
       "description": "Step-by-step guide to start using Copilot Studio",
       "type": "tutorial"
     },
@@ -20,7 +20,7 @@
     },
     {
       "title": "Copilot Studio FAQ",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-copilot",
       "description": "Frequently asked questions about Copilot Studio",
       "type": "information"
     },
@@ -50,7 +50,7 @@
     },
     {
       "title": "Power Automate Integration",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-integration",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-connectors",
       "description": "Integrating Copilot Studio with Power Automate",
       "type": "integration"
     },
@@ -68,7 +68,7 @@
     },
     {
       "title": "Security in Copilot Studio",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
       "description": "Best practices for securing your Copilot Studio bots",
       "type": "best-practice"
     },
@@ -86,13 +86,13 @@
     },
     {
       "title": "Multilingual Bots in Copilot Studio",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual-bots",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
       "description": "Creating bots that support multiple languages",
       "type": "tutorial"
     },
     {
       "title": "Personalizing Conversations in Copilot Studio",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/personalize-conversations",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-prompt-modification",
       "description": "Techniques for personalizing bot conversations",
       "type": "best-practice"
     },
@@ -104,13 +104,13 @@
     },
     {
       "title": "Copilot Studio Governance and Administration",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/governance",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
       "description": "Managing Copilot Studio at an organizational level",
       "type": "concept"
     },
     {
       "title": "AI Models in Copilot Studio",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/ai-models",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-ai-features",
       "description": "Understanding and using AI models in Copilot Studio",
       "type": "concept"
     },
@@ -134,13 +134,13 @@
     },
     {
       "title": "Copilot Studio Skills",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/skills",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-add-skills",
       "description": "Using and creating skills in Copilot Studio",
       "type": "concept"
     },
     {
       "title": "Copilot Studio Conversational Boosters",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/conversational-boosters",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-conversations",
       "description": "Enhancing bot conversations with conversational boosters",
       "type": "concept"
     },
@@ -158,13 +158,13 @@
     },
     {
       "title": "Copilot Studio Chatbot Templates",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/use-copilot-templates",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/building-your-own-copilot-with-copilot-studio/",
       "description": "Using pre-built templates to quickly create chatbots",
       "type": "tutorial"
     },
     {
       "title": "Copilot Studio Power Apps Integration",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-apps-integration",
+      "url": "https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/ai-overview",
       "description": "Integrating Copilot Studio bots with Power Apps",
       "type": "integration"
     },
@@ -176,7 +176,7 @@
     },
     {
       "title": "Copilot Studio Compliance and Data Residency",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/compliance-data-residency",
+      "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy",
       "description": "Understanding compliance and data residency in Copilot Studio",
       "type": "information"
     },
@@ -188,7 +188,7 @@
     },
     {
       "title": "Copilot Studio Audience Targeting",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-audience-targeting",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/copilot-in-power-virtual-agents-next-generation-ai-assists-bot-building-with-natural-language/",
       "description": "Targeting specific audiences with your bot",
       "type": "concept"
     },
@@ -206,7 +206,7 @@
     },
     {
       "title": "Copilot Studio Cognitive Services Integration",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/cognitive-services-integration",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-clu-integration",
       "description": "Integrating Azure Cognitive Services with Copilot Studio",
       "type": "integration"
     },
@@ -218,7 +218,7 @@
     },
     {
       "title": "Copilot Studio Contextual Help",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/contextual-help",
+      "url": "https://learn.microsoft.com/en-us/power-automate/contextual-help-bot",
       "description": "Implementing contextual help in your bot",
       "type": "concept"
     },
@@ -236,7 +236,7 @@
     },
     {
       "title": "Copilot Studio Versioning and Release Management",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/versioning-release-management",
+      "url": "https://learn.microsoft.com/en-us/power-platform/release-plan/2024wave1/microsoft-copilot-studio/",
       "description": "Managing versions and releases of your bot",
       "type": "concept"
     },
@@ -248,19 +248,19 @@
     },
     {
       "title": "Copilot Studio Localization",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/localization",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/multilingual",
       "description": "Localizing your bot for different regions and languages",
       "type": "tutorial"
     },
     {
       "title": "Copilot Studio CI/CD",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/ci-cd",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels",
       "description": "Implementing Continuous Integration and Deployment for your bot",
       "type": "best-practice"
     },
     {
       "title": "Copilot Studio Proactive Messaging",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/proactive-messaging",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-proactive-message",
       "description": "Implementing proactive messaging in your bot",
       "type": "tutorial"
     },
@@ -272,7 +272,7 @@
     },
     {
       "title": "Copilot Studio Bot Framework Integration",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/bot-framework-integration",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-bot-framework-composer-fundamentals",
       "description": "Integrating Copilot Studio with Bot Framework",
       "type": "integration"
     },
@@ -284,7 +284,7 @@
     },
     {
       "title": "Copilot Studio Performance Monitoring",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/performance-monitoring",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-summary",
       "description": "Monitoring and optimizing your bot's performance",
       "type": "tutorial"
     },
@@ -296,7 +296,7 @@
     },
     {
       "title": "Copilot Studio Troubleshooting Guide",
-      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/troubleshooting",
+      "url": "https://docs.github.com/copilot/troubleshooting-github-copilot/troubleshooting-common-issues-with-github-copilot",
       "description": "Comprehensive guide for troubleshooting common issues",
       "type": "tutorial"
     }
