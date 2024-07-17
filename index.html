@@ -15,6 +15,8 @@
             --background: #333;
             --background-alt: #444;
             --border-color: #666;
+            --link-color: #ffffff;
+            --link-visited-color: #e0e0e0;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -50,11 +52,16 @@
             background-color: var(--background);
         }
         .resource-link {
-            color: var(--text-main);
+            color: var(--link-color);
             text-decoration: none;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
         }
         .resource-link:hover {
             text-decoration: underline;
+        }
+        .resource-link:visited {
+            color: var(--link-visited-color);
         }
         .resource-link:visited::after {
             content: " \2713";
@@ -179,12 +186,16 @@
                 document.documentElement.style.setProperty('--background', '#f0f0f0');
                 document.documentElement.style.setProperty('--background-alt', '#fff');
                 document.documentElement.style.setProperty('--border-color', '#41403e');
+                document.documentElement.style.setProperty('--link-color', '#0000ff');
+                document.documentElement.style.setProperty('--link-visited-color', '#800080');
             } else {
                 document.documentElement.style.setProperty('--text-main', '#f0f0f0');
                 document.documentElement.style.setProperty('--text-secondary', '#c1c0bd');
                 document.documentElement.style.setProperty('--background', '#333');
                 document.documentElement.style.setProperty('--background-alt', '#444');
                 document.documentElement.style.setProperty('--border-color', '#666');
+                document.documentElement.style.setProperty('--link-color', '#ffffff');
+                document.documentElement.style.setProperty('--link-visited-color', '#e0e0e0');
             }
         }
 
@@ -193,18 +204,26 @@
                 case 'retro':
                     document.documentElement.style.setProperty('--primary', '#8B4513');
                     document.documentElement.style.setProperty('--secondary', '#CD853F');
+                    document.documentElement.style.setProperty('--link-color', '#FFD700');
+                    document.documentElement.style.setProperty('--link-visited-color', '#DAA520');
                     break;
                 case 'neon':
                     document.documentElement.style.setProperty('--primary', '#FF00FF');
                     document.documentElement.style.setProperty('--secondary', '#00FFFF');
+                    document.documentElement.style.setProperty('--link-color', '#FFFF00');
+                    document.documentElement.style.setProperty('--link-visited-color', '#FF69B4');
                     break;
                 case 'pastel':
                     document.documentElement.style.setProperty('--primary', '#FFB3BA');
                     document.documentElement.style.setProperty('--secondary', '#BAFFC9');
+                    document.documentElement.style.setProperty('--link-color', '#000000');
+                    document.documentElement.style.setProperty('--link-visited-color', '#4B0082');
                     break;
                 default:
                     document.documentElement.style.setProperty('--primary', '#41403e');
                     document.documentElement.style.setProperty('--secondary', '#0071de');
+                    document.documentElement.style.setProperty('--link-color', '#ffffff');
+                    document.documentElement.style.setProperty('--link-visited-color', '#e0e0e0');
             }
             updateTheme();
         }
