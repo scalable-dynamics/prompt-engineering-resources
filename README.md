@@ -1,11 +1,38 @@
-# Prompt Engineering Resources
+> Prompt Engineering
 
 Prompt engineering is the process of structuring an instruction that can be interpreted and understood by a generative AI model. It enhances the effectiveness and efficiency of AI systems and is critical for developing advanced AI capabilities.
 
-## Advanced Prompt Engineering Techniques
-
 Based on the presentation by [Greg DeCarlo](https://linktr.ee/mrinreality), here are the key prompt engineering techniques:
 **[The Status Quo of Prompt Engineering - Greg DeCarlo 2024.pdf](The-Status-Quo-of-Prompt-Engineering--Greg-DeCarlo-2024.pdf)**
+
+# Prompt Engineering Resources
+
+## Azure AI and Copilot Studio
+- [Azure AI and Copilot Studio Resource Hub](Azure%20AI%20and%20Copilot%20Studio/Azure%20AI%20and%20Copilot%20Studio%20Resource%20Hub.html)
+- [azure-ai-troubleshooting-guide.md](Azure%20AI%20and%20Copilot%20Studio/azure-ai-troubleshooting-guide.md)
+- [power-automate-copilot-integration.md](Azure%20AI%20and%20Copilot%20Studio/power-automate-copilot-integration.md)
+
+## CoT Demo - GPT - BizKit Software Development Team
+- [index.html](GPT%20-%20BizKit%20Software%20Development%20Team/output/index.html)
+- [BizKit - Software Development Team (GPT system prompt).md](GPT%20-%20BizKit%20Software%20Development%20Team/BizKit%20-%20Software%20Development%20Team%20(GPT%20system%20prompt).md)
+
+## Interactive Learning Pages
+- [Advanced Prompt Engineering Calculator](Interactive%20Learning%20Pages/Advanced%20Prompt%20Engineering%20Calculator.html)
+- [AI Prompt Engineering Academy](Interactive%20Learning%20Pages/AI%20Prompt%20Engineering%20Academy.html)
+- [AI Prompt Engineering Infographic](Interactive%20Learning%20Pages/AI%20Prompt%20Engineering%20Infographic.html)
+- [Language Model Context Management](Interactive%20Learning%20Pages/Language%20Model%20Context%20Management.html)
+- [Prompt Engineering Cookbook - websim.ai](Interactive%20Learning%20Pages/Prompt%20Engineering%20Cookbook%20-%20websim.ai.html)
+- [Prompt Engineering Timeline Explorer](Interactive%20Learning%20Pages/Prompt%20Engineering%20Timeline%20Explorer.html)
+- [The Status Quo of Prompt Engineering](Interactive%20Learning%20Pages/The%20Status%20Quo%20of%20Prompt%20Engineering.html)
+
+## Other Resources
+- [The Status Quo of Prompt Engineering - Greg DeCarlo 2024](The-Status-Quo-of-Prompt-Engineering--Greg-DeCarlo-2024.pdf)
+- [High Dimensional Latent Space](High-Dimensional-Latent-Space.png)
+- [Prompt Engineering Techniques](prompt-engineering-techniques.md)
+- [Tokenization and Embeddings BackPropagation](Tokenization-and-Embeddings-BackPropagation.png)
+
+
+## Advanced Prompt Engineering Techniques
 
 ### 1. In-Context Learning
 - **Keywords:** Emergent abilities, temporary learning, meta-learning
@@ -73,40 +100,3 @@ Based on the presentation by [Greg DeCarlo](https://linktr.ee/mrinreality), here
 - Leverage Few-Shot prompting when you have clear examples of desired outputs
 - Apply Self-Consistency and Complexity-Based Prompting for increased reliability in critical components
 - Utilize Self-Refinement for iterative improvement of your project
-
-## Folder Structure
-
-```
-PROMPT-ENGINEERING-LIBRARY/
-│
-├── Azure AI and Copilot Studio/
-│   ├── Azure AI and Copilot Studio Resource Hub.html
-│   ├── azure-ai-studio-resources.json
-│   ├── azure-ai-troubleshooting-guide.md
-│   ├── copilot-studio-resources.json
-│   ├── power-automate-copilot-integration.md
-│
-├── GPT - BizKit Software Development Team/
-│   ├── output/
-│   │   ├── index.html
-│   │   ├── prompt_input.html
-│   │   ├── scripts.js
-│   │   ├── styles.css
-│   ├── BizKit - Software Development Team (GPT system prompt).md
-│
-├── Interactive Learning Pages/
-│   ├── Advanced Prompt Engineering Calculator.html
-│   ├── AI Prompt Engineering Academy.html
-│   ├── AI Prompt Engineering Infographic.html
-│   ├── Language Model Context Management.html
-│   ├── Prompt Engineering Cookbook - websim.ai.html
-│   ├── Prompt Engineering Timeline Explorer.html
-│   ├── The Status Quo of Prompt Engineering.html
-│
-├── The-Status-Quo-of-Prompt-Engineering--Greg-DeCarlo-2024.pdf
-├── High-Dimensional-Latent-Space.png
-├── prompt-engineering-techniques.md
-└── Tokenization-and-Embeddings-BackPropagation.png
-```
-
-For more information, visit the [Prompt Engineering Resources GitHub page](https://github.com/scalable-dynamics/prompt-engineering-resources).
