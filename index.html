@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering Resource Directory</title>
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@latest/css/nes.min.css">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 4px solid #000;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        .resource-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resource-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 2px solid #000;
+        }
+        .resource-link {
+            word-break: break-all;
+        }
+        #searchInput {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container nes-container is-rounded">
+        <h1 class="nes-text is-primary">Prompt Engineering Resource Directory</h1>
+        
+        <div class="nes-field">
+            <label for="searchInput">Search Resources:</label>
+            <input type="text" id="searchInput" class="nes-input" placeholder="Enter keywords...">
+        </div>
+        
+        <ul id="resourceList" class="resource-list"></ul>
+    </div>
+
+    <script>
+        const resources = [
+            "The-Status-Quo-of-Prompt-Engineering--Greg-DeCarlo-2024.pdf",
+            "Azure AI and Copilot Studio/Azure AI and Copilot Studio Resource Hub.html",
+            "Azure AI and Copilot Studio/azure-ai-troubleshooting-guide.md",
+            "Azure AI and Copilot Studio/power-automate-copilot-integration.md",
+            "GPT - BizKit Software Development Team/output/index.html",
+            "GPT - BizKit Software Development Team/BizKit - Software Development Team (GPT system prompt).md",
+            "Interactive Learning Pages/Advanced Prompt Engineering Calculator.html",
+            "Interactive Learning Pages/AI Prompt Engineering Academy.html",
+            "Interactive Learning Pages/AI Prompt Engineering Infographic.html",
+            "Interactive Learning Pages/Language Model Context Management.html",
+            "Interactive Learning Pages/Prompt Engineering Cookbook - websim.ai.html",
+            "Interactive Learning Pages/Prompt Engineering Timeline Explorer.html",
+            "Interactive Learning Pages/The Status Quo of Prompt Engineering.html",
+            "prompt-engineering-techniques.html",
+            "High-Dimensional-Latent-Space.png",
+            "Tokenization-and-Embeddings-BackPropagation.png"
+        ];
+
+        function displayResources(filteredResources = resources) {
+            const resourceList = document.getElementById('resourceList');
+            resourceList.innerHTML = '';
+            filteredResources.forEach((resource, index) => {
+                const li = document.createElement('li');
+                li.className = 'resource-item nes-container';
+                li.innerHTML = `
+                    <span class="nes-text is-primary">${index + 1}.</span>
+                    <a href="${resource}" class="resource-link nes-text is-success" target="_blank">${resource}</a>
+                `;
+                resourceList.appendChild(li);
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredResources = resources.filter(resource => 
+                resource.toLowerCase().includes(searchTerm)
+            );
+            displayResources(filteredResources);
+        });
+
+        displayResources();
+    </script>
+</body>
+</html>
