@@ -4,22 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Engineering Resource Directory</title>
-    <link rel="stylesheet" href="https://unpkg.com/nes.css@latest/css/nes.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.2/dist/paper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary: #41403e;
+            --secondary: #0071de;
+            --text-main: #f0f0f0;
+            --text-secondary: #c1c0bd;
+            --background: #333;
+            --background-alt: #444;
+            --border-color: #666;
+        }
         body {
-            font-family: 'Press Start 2P', cursive;
-            background-color: #f0f0f0;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            padding: 10px;
+            font-size: 16px;
         }
         .container {
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border: 4px solid #000;
+            background-color: var(--background-alt);
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
         }
-        h1, h2 {
-            margin-bottom: 20px;
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--secondary);
         }
         .resource-list {
             list-style-type: none;
@@ -28,24 +44,81 @@
         .resource-item {
             margin-bottom: 10px;
             padding: 10px;
-            border: 2px solid #000;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            word-break: break-word;
+            background-color: var(--background);
         }
         .resource-link {
-            word-break: break-all;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .resource-link:visited::after {
+            content: " \2713";
+            color: var(--secondary);
         }
         #searchInput {
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding: 8px;
+            font-size: 16px;
+            background-color: var(--background);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .theme-toggle, .color-scheme {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--secondary);
+            color: var(--text-main);
+            cursor: pointer;
+        }
+        .icon {
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container nes-container is-rounded">
-        <h1 class="nes-text is-primary">Prompt Engineering Resource Directory</h1>
+    <div class="container">
+        <h1><i class="fas fa-lightbulb icon"></i>Prompt Engineering Resources</h1>
         
-        <div class="nes-field">
-            <label for="searchInput">Search Resources:</label>
-            <input type="text" id="searchInput" class="nes-input" placeholder="Enter keywords...">
+        <div class="controls">
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-adjust icon"></i>Toggle Theme
+            </button>
+            <select class="color-scheme" onchange="changeColorScheme(this.value)">
+                <option value="default">Default</option>
+                <option value="retro">Retro</option>
+                <option value="neon">Neon</option>
+                <option value="pastel">Pastel</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="searchInput"><i class="fas fa-search icon"></i>Search:</label>
+            <input type="text" id="searchInput" placeholder="Enter keywords...">
         </div>
         
         <ul id="resourceList" class="resource-list"></ul>
@@ -76,10 +149,11 @@
             resourceList.innerHTML = '';
             filteredResources.forEach((resource, index) => {
                 const li = document.createElement('li');
-                li.className = 'resource-item nes-container';
+                li.className = 'resource-item';
                 li.innerHTML = `
-                    <span class="nes-text is-primary">${index + 1}.</span>
-                    <a href="${resource}" class="resource-link nes-text is-success" target="_blank">${resource}</a>
+                    <a href="${resource}" class="resource-link" target="_blank">
+                        <i class="fas fa-file-alt icon"></i>${resource}
+                    </a>
                 `;
                 resourceList.appendChild(li);
             });
@@ -92,6 +166,48 @@
             );
             displayResources(filteredResources);
         });
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            updateTheme();
+        }
+
+        function updateTheme() {
+            if (document.body.classList.contains('light-theme')) {
+                document.documentElement.style.setProperty('--text-main', '#41403e');
+                document.documentElement.style.setProperty('--text-secondary', '#666');
+                document.documentElement.style.setProperty('--background', '#f0f0f0');
+                document.documentElement.style.setProperty('--background-alt', '#fff');
+                document.documentElement.style.setProperty('--border-color', '#41403e');
+            } else {
+                document.documentElement.style.setProperty('--text-main', '#f0f0f0');
+                document.documentElement.style.setProperty('--text-secondary', '#c1c0bd');
+                document.documentElement.style.setProperty('--background', '#333');
+                document.documentElement.style.setProperty('--background-alt', '#444');
+                document.documentElement.style.setProperty('--border-color', '#666');
+            }
+        }
+
+        function changeColorScheme(scheme) {
+            switch(scheme) {
+                case 'retro':
+                    document.documentElement.style.setProperty('--primary', '#8B4513');
+                    document.documentElement.style.setProperty('--secondary', '#CD853F');
+                    break;
+                case 'neon':
+                    document.documentElement.style.setProperty('--primary', '#FF00FF');
+                    document.documentElement.style.setProperty('--secondary', '#00FFFF');
+                    break;
+                case 'pastel':
+                    document.documentElement.style.setProperty('--primary', '#FFB3BA');
+                    document.documentElement.style.setProperty('--secondary', '#BAFFC9');
+                    break;
+                default:
+                    document.documentElement.style.setProperty('--primary', '#41403e');
+                    document.documentElement.style.setProperty('--secondary', '#0071de');
+            }
+            updateTheme();
+        }
 
         displayResources();
     </script>
